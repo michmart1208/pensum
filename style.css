@@ -10,11 +10,11 @@ html, body {
 
 /* lienzo de la malla */
 canvas {
-  display: block;
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   z-index: 1;
+  display: block;
 }
 
 /* contador de créditos */
@@ -45,7 +45,8 @@ canvas {
 
 /* estilo base de cada ramo */
 .course {
-  width: 160px; height: 100px;
+  width: 160px;
+  height: 100px;
   margin: 8px;
   padding: 6px;
   box-sizing: border-box;
@@ -62,6 +63,7 @@ canvas {
   position: relative;
 }
 
+/* hover */
 .course:hover {
   transform: scale(1.03);
 }
@@ -87,6 +89,7 @@ canvas {
 .grade-container {
   width: 100%;
   text-align: center;
+  display: none;
 }
 
 .grade-container input {
