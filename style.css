@@ -1,76 +1,131 @@
 /* Reset y fondo minimalista */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  width: 100%; height: 100%;
-  background: #E3F2FD;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #f5f7fa;   /* fondo muy suave, casi blanco con un toque azul */
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
 
 /* Header de créditos y promedio */
 #header {
-  position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 20px;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
   z-index: 3;
 }
-#credits, #average {
-  background: rgba(255,255,255,0.8);
-  padding: 8px 12px; border-radius: 4px;
-  font-weight: bold; color: #0277BD;
+
+#credits,
+#average {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #0277bd;
 }
 
 /* Wrapper para canvas y contenedores */
 #wrapper {
-  position: absolute; top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
+
 #arrowCanvas {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
+
 #container {
   position: relative;
-  display: flex; flex-direction: column;
-  gap: 40px; padding: 80px 20px 20px;
-  z-index: 2; overflow-y: auto; height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 20px 20px;
+  z-index: 2;
+  overflow-y: auto;
+  height: 100%;
 }
 
 /* Cada fila de semestre */
 .semester-row {
-  display: flex; gap: 20px;
+  display: flex;
+  gap: 20px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 /* Estilo de cada curso */
 .course {
+  width: 160px;
+  padding: 10px;
+  background: #bbdefb;
+  border: 2px solid #90caf9;
+  border-radius: 6px;
+  color: #01579b;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.3s;
   position: relative;
-  width: 160px; padding: 10px;
-  background: #BBDEFB; border: 2px solid #90CAF9;
-  border-radius: 6px; color: #01579B;
-  text-align: center; cursor: pointer;
-  transition: transform 0.1s, opacity .3s;
 }
-.course:hover { transform: scale(1.05); }
-.course.locked { 
-  background: #ECEFF1; border-color: #CFD8DC; color: #78909C;
-  cursor: not-allowed; opacity: 0.6;
+
+.course:hover {
+  transform: scale(1.05);
 }
+
+.course.locked {
+  background: #eceff1;
+  border-color: #cfd8dc;
+  color: #78909c;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .course.approved {
-  background: #A5D6A7; border-color: #66BB6A; color: #1B5E20;
+  background: #a5d6a7;
+  border-color: #66bb6a;
+  color: #1b5e20;
   cursor: default;
 }
 
 /* Título y créditos internos */
-.course .title { font-size: 0.9rem; margin-bottom: 6px; }
-.course .credit { font-size: 0.8rem; margin-bottom: 6px; }
+.course .title {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.course .credit {
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
 
 /* Input de nota */
 .grade-container {
-  margin-top: 6px; display: none;
+  margin-top: 6px;
+  display: none;
 }
+
 .grade-container input {
-  width: 80%; padding: 4px; font-size: 0.85rem;
-  border-radius: 4px; border: 1px solid #90A4AE;
+  width: 80%;
+  padding: 4px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: 1px solid #90a4ae;
   text-align: center;
 }
