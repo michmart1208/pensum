@@ -24,7 +24,6 @@ body {
   gap: 20px;
   z-index: 3;
 }
-
 #credits,
 #average {
   background: rgba(255, 255, 255, 0.8);
@@ -42,7 +41,6 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
 #arrowCanvas {
   position: absolute;
   top: 0;
@@ -51,7 +49,6 @@ body {
   height: 100%;
   z-index: 1;
 }
-
 #container {
   position: relative;
   display: flex;
@@ -67,7 +64,7 @@ body {
 .semester-row {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-evenly;  /* distribuye las materias a lo largo de toda la fila */
   margin-bottom: 20px;
 }
 
@@ -84,11 +81,9 @@ body {
   transition: transform 0.1s, opacity 0.3s;
   position: relative;
 }
-
 .course:hover {
   transform: scale(1.05);
 }
-
 .course.locked {
   background: #eceff1;
   border-color: #cfd8dc;
@@ -96,11 +91,10 @@ body {
   cursor: not-allowed;
   opacity: 0.6;
 }
-
 .course.approved {
-  background: #a5d6a7;
-  border-color: #66bb6a;
-  color: #1b5e20;
+  background: #fff59d;    /* amarillo suave */
+  border-color: #fdd835;  /* amarillo intenso */
+  color: #f57f17;         /* texto oscuro para contraste */
   cursor: default;
 }
 
@@ -109,7 +103,6 @@ body {
   font-size: 0.9rem;
   margin-bottom: 6px;
 }
-
 .course .credit {
   font-size: 0.8rem;
   margin-bottom: 6px;
@@ -120,7 +113,6 @@ body {
   margin-top: 6px;
   display: none;
 }
-
 .grade-container input {
   width: 80%;
   padding: 4px;
